@@ -1,0 +1,272 @@
+@font-face {
+    font-family: "Alegreya Sans SC";
+    src: url("assets/fonts/alegreya-sans-sc-v18-latin-500.woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Laila";
+    src: url("assets/fonts/laila-v11-latin-600.woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Laila";
+    src: url("assets/fonts/laila-v11-latin-regular.woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #fff5ee;
+    font-family: "Laila", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.2;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 20px;
+    min-height: 100%;
+}
+
+.movies-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    padding: 0 20px 20px;
+    justify-content: space-between;
+}
+
+.heading, .year {
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.2;
+    user-select: none;
+    font-size: 28px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 30%;
+}
+
+.input:focus {
+    outline: 0;
+    box-shadow: 0 0 0 5px #e6f4f8;
+}
+
+.input {
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #0d98ba;
+    color: #fff5ee;
+    border: none;
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    transition: box-shadow 0.15s ease-in-out;
+    letter-spacing: 1px;
+    text-shadow: 0 0 2px #000000;
+    word-spacing: 4px;
+}
+
+.input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: url("assets/img/bones.png");
+    background-size: contain;
+
+}
+
+::placeholder {
+    font-family: inherit;
+    color: #e6f4f8;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.search-button {
+    height: 40px;
+    width: 40px;
+    background: url("assets/img/search.png") no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.movies-container {
+    z-index: 50;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 70px 50px;
+    row-gap: 70px;
+    column-gap: 20px;
+    background-color: #0d98ba;
+}
+
+.movie {
+    position: relative;
+    background-color: #fffff0;
+    transition: 250ms all;
+    height: 520px;
+}
+
+.image {
+    width: 300px;
+    height: 450px;
+}
+
+.info {
+    width: 300px;
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.movie-title {
+    word-wrap: break-word;
+    width: inherit;
+    text-align: center;
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.vote-average {
+    height: 15px;
+    background-color: #e6f4f8;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.red {
+    color: #fc1a03;
+}
+
+.orange {
+    color: #fc9203;
+}
+
+.green {
+    color: #02bd37;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+.year {
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.github {
+    margin-left: auto;
+    height: 50px;
+    width: 50px;
+    background: url("assets/img/logo-github.png") no-repeat center;
+}
+
+.rs {
+    height: 50px;
+    width: 150px;
+    background: url("assets/img/rs_school_js.svg") no-repeat center;
+}
+
+.rs-link, .github-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    outline: none;
+}
+
+.overview {
+    height: 450px;
+    position: absolute;
+    top: 70px;
+    overflow-y: auto;
+    transition: all 1s ease-in-out;
+    background: rgba(255, 255, 240, 0.8);
+    z-index: -100;
+}
+
+.movie:hover .overview {
+    z-index: 100;
+}
+
+.overview-heading {
+    font-family: "Laila", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #000000;
+    padding-top: 15px;
+}
+
+.overview-info {
+    font-family: "Laila", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 10px 20px;
+    text-align: justify;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .form {
+        width: 70%;
+    }
+
+    .header-container {
+        padding: 0 0 20px;
+    }
+
+    .heading {
+        font-size: 14px;
+    }
+}
